@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main container py-5">
+      <div class="header-content my-2">
+        <h1>Bookmarker</h1>
+      </div>
+      <div class="booking-section py-3 mt-5">
+        <h2 class="text-center mb-5">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <div class="mb-3">
+          <label for="siteName" class="form-label fw-bold">
+            <i class="fa-solid fa-book-bookmark"></i>
+            Site Name
+          </label>
+          <input
+            oninput="validateInput(this)"
+            type="text"
+            class="form-control"
+            id="siteName"
+            placeholder="Bookmark Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="siteUrl" class="form-label fw-bold">
+            <i class="fa-solid fa-link"></i>
+            Site URL
+          </label>
+          <input
+            oninput="validateInput(this)"
+            type="email"
+            class="form-control"
+            id="siteUrl"
+            placeholder="Website URL"
+          />
+        </div>
+        <button onclick="addBookMark()" class="btn button-submit px-4">
+          Submit
+        </button>
+      </div>
+
+      <table class="table my-4">
+        <thead>
+          <tr>
+            <th scope="col" class="text-capitalize text-center">index</th>
+            <th scope="col" class="text-capitalize text-center">Website</th>
+            <th scope="col" class="text-capitalize text-center">visit</th>
+            <th scope="col" class="text-capitalize text-center">delete</th>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+
+      <div id="validationPrompat" class="validation-rules position-absolute visually-hidden ">
+        
+        <div class="validaition-content">
+            <div class="valid-hrader">
+                <div class="three-colors">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <button onclick="exit()" class="btn fs-4 " id="exitButton"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+          <p>Site Name or Url is not valid, Please follow the rules below :</p>
+          <div class="rules">
+            <p>
+              <i class="fa-regular fa-circle-right p-2"></i>Site name must
+              contain at least 3 characters
+            </p>
+
+            <p>
+              <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+              valid one
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
