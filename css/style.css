@@ -52,6 +52,10 @@ a{
     font-family: "Righteous", cursive;
     background: linear-gradient(to right, #3ca55c, #b5ac49);
     color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
     background-clip: text;
 
 }
